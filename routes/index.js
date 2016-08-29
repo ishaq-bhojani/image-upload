@@ -17,12 +17,12 @@ router.get('/saveImage', function (req, res, next) {
     a.save(function (err, a) {
         if (err) throw err;
         console.error('saved img to mongo');
-        res.send(a);
+        res.send('http://localhost:3000/image/'+a._id);
     });
 });
 
-router.get('/image', function (req,res) {
-    Image.findOne({'_id': '57c3fd75f3b731606e578ebd'}, function (err, doc) {
+router.get('/image/:imgId', function (req,res,next) {
+    Image.findOne({'_id': req.param('imgId')}, function (err, doc) {
         if (err) return next(err);
         res.contentType(doc.img.contentType);
         res.send(doc.img.data);
