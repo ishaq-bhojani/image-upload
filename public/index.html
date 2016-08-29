@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="bower_components/promise/promise.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/html2canvas/build/html2canvas.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="javascripts/app.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myCtrl">
+    <button ng-click="takeSnapshot()">Take ScreenShot Or Press Ctrl + Enter</button>
+    <a id="test"></a>
+    <a ng-href="{{url}}" target="_blank" ng-if="url">{{url}}</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "image-upload",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ishaq Bhojani <ishaq@malikans.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ishaq-bhojani/image-upload",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "promise": "^0.2.2",
+    "html2canvas": "https://github.com/niklasvh/html2canvas.git#^0.4.1",
+    "jquery": "^3.1.0"
+  }
+}

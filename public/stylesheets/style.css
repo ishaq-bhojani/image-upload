@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
