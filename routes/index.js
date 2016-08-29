@@ -6,6 +6,7 @@ var Image = mongoose.model('Image');
 var fs = require('fs');
 var multer = require('multer');
 var upload = multer({ dest: '/tmp/'});
+var mv = require('mv');
 
 router.get('/', function (req, res, next) {
     res.render('index', {title: 'Express'});
@@ -14,10 +15,10 @@ router.get('/', function (req, res, next) {
 var imgPath = './img.png';
 router.post('/saveImage', upload.single('file'), function (req, res, next) {
     var file = __dirname + '/' + req.file.filename;
-    fs.rename(req.file.path, file, function(err) {
+    mv(req.file.path, file, function(err) {
         if (err) {
             console.log(err);
-            res.send(500);
+            res.sendStatus(500);
         } else {
             var a = new Image;
             a.img.data = fs.readFileSync(file);
@@ -29,6 +30,9 @@ router.post('/saveImage', upload.single('file'), function (req, res, next) {
             });
         }
     });
+    /*fs.rename(req.file.path, file, function(err) {
+
+    });*/
 });
 
 router.get('/image/:imgId', function (req,res,next) {
