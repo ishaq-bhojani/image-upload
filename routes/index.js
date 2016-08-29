@@ -8,6 +8,7 @@ var fs = require('fs');
 router.get('/', function (req, res, next) {
     res.render('index', {title: 'Express'});
 });
+
 var imgPath = './img.png';
 router.get('/saveImage', function (req, res, next) {
     var a = new Image;
@@ -19,6 +20,7 @@ router.get('/saveImage', function (req, res, next) {
         res.send(a);
     });
 });
+
 router.get('/image', function (req,res) {
     Image.findOne({'_id': '57c3fd75f3b731606e578ebd'}, function (err, doc) {
         if (err) return next(err);
