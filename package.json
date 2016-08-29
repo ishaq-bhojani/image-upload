@@ -13,6 +13,7 @@
     "express": "~4.13.4",
     "mongoose": "^4.5.10",
     "morgan": "~1.7.0",
+    "multer": "^1.2.0",
     "serve-favicon": "~2.3.0"
   }
 }
