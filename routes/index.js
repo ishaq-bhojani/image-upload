@@ -25,8 +25,7 @@ router.post('/saveImage', upload.single('file'), function (req, res, next) {
             a.img.contentType = 'image/png';
             a.save(function (err, a) {
                 if (err) throw err;
-                console.error('saved img to mongo');
-                res.send('http://localhost:3000/image/'+a._id);
+                res.send('http://node-image-upload.herokuapp.com/image/'+a._id);
             });
         }
     });
